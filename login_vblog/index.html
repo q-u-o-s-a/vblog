@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple Blog</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Jakub Walczak">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- editor -->
+    <link rel="stylesheet" href="assets/css/jquery.cleditor.css"/>
+    <script src="assets/js/jquery.cleditor.min.js"></script>
+
+    <script src="app/login.js"></script>
+    <script src="app/navigation.js"></script>
+    <script src="app/loadPost.js"></script>
+    <script src="app/loadPosts.js"></script>
+    <script src="app/event-store-post.js"></script>
+    <script src="app/event-delete-post.js"></script>
+    <script src="app/event-edit-post.js"></script>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3">Simple Blog Admin Panel</h1>
+        <p class="lead">by Jakub Walczak</p>
+    </div>
+</div>
+<div class="container">
+    <div id="formContent">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-3">
+                <form>
+                    <div class="form-group">
+                        <label for="username">Name:</label>
+                        <input type="text" class="form-control" id="username" placeholder="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="password">
+                    </div>
+                    <button type="button" id="loginButton" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="adminPanel" style="display:none">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-9">
+                <div>
+                    <nav class="navbar navbar-dark bg-primary">
+                        <a id="navigationAddPost" class="navbar-brand" href="#!">add post</a>
+                        <a id="navigationListPosts" class="navbar-brand" href="#!">list</a>
+                    </nav>
+                    <hr>
+                    <div id="addPost" style="display:none">
+                        <input type="text" class="form-control" id="addTitle" placeholder="title">
+                        <textarea id="postAddEditorArea"></textarea>
+                        <span><button type="button" id="addButton" class="btn btn-primary">Save post</button></span>
+                    </div>
+
+                    <div id="listPosts" style="display:none">
+                    </div>
+
+                    <div id="editPost" style="display:none">
+                        <input type="text" class="form-control" id="editTitle" placeholder="title">
+                        <textarea id="postEditEditorArea"></textarea>
+                        <span><button type="button" id="editButton" class="btn btn-primary">Save post</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
